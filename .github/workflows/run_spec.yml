@@ -31,7 +31,6 @@ jobs:
         PG_USER: postgres
         PG_PASSWORD: postgres
         RAILS_ENV: test
-        # POSTGRES_PASSWORD: ${{ secrets.MUGEN_PASS }}
         
       run: |
         sudo apt-get -yqq install libpq-dev
