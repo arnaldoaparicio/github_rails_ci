@@ -28,7 +28,6 @@ jobs:
       env:
         PG_DATABASE: postgres
         PG_HOST: localhost
-        PG_PORT: 5432
         PG_USER: postgres
         PG_PASSWORD: postgres
         RAILS_ENV: test
@@ -38,6 +37,5 @@ jobs:
         sudo apt-get -yqq install libpq-dev
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rails db:create
-        bundle exec rails db:migrate
-        bundle exec rake
+        bundle exec rails db:setup
+        bundle exec rake test
