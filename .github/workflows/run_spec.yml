@@ -28,10 +28,14 @@ jobs:
         cmd: install
     - name: Build and run tests
       env:
-        POSTGRES_USER: postgres
+        PG_DATABASE: postgres
+        PG_HOST: localhost
+        PG_PORT: 5432
+        PG_USER: postgres
+        PG_PASSWORD: postgres
+        RAILS_ENV: test
         # POSTGRES_PASSWORD: ${{ secrets.MUGEN_PASS }}
-        POSTGRES_HOST: localhost
-        POSTGRES_DB: test
+        
       run: |
         sudo apt-get -yqq install libpq-dev
         gem install bundler
