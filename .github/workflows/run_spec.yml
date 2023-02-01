@@ -33,9 +33,8 @@ jobs:
         POSTGRES_HOST: localhost
         POSTGRES_DB: test
       run: |
-        bin/rails db:setup
-      run: |
         sudo apt-get -yqq install libpq-dev
         gem install bundler
+        bin/rails db:setup
         bundle install --jobs 4 --retry 3
         bundle exec rake
