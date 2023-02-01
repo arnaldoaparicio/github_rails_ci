@@ -37,3 +37,14 @@ This is a test app for trying to get Github Actions passing.
 
  
 ```
+
+## UPDATE 02/01/2023
+Finally have tests running on Github Actions
+
+In ```run_spec.yml``` i removed the postgres env except ```POSTGRES_PASSWORD```
+
+All credentials are located further down the file. These need to be the same as the ones in ```config/database.yml```
+
+config/database.yml, go to test section and add ```host```, ```username```, and ```password```.
+
+then head to ```config/application.rb``` and uncomment ```require "rails/test_unit/railtie"```
